@@ -19,7 +19,10 @@ python:
   - "3.6-dev" # 3.6 development branch
   - "nightly" # currently points to 3.7-dev
 before_install:
-- git clone https://github.com/jgarff/rpi_ws281x.git /tmp/rpi_ws281x
-- scons /tmp/rpi_ws281x/
-install: "pip install -r requirements.txt"
+  - git clone https://github.com/jgarff/rpi_ws281x.git ~/rpi_ws281x
+  - cd ~/rpi_ws2 81x
+  - scons
+install: 
+  - cd ~/claudinha-io/claudinha-module
+  - "pip install -r requirements.txt"
 script: pytest tests/
