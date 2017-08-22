@@ -20,14 +20,10 @@ python:
   - "3.6-dev" # 3.6 development branch
   - "nightly" # currently points to 3.7-dev
 before_install:
-  - git clone https://github.com/pimoroni/unicorn-hat ~/unicorn-hat/
-  - cd ~/unicorn-hat/
-  - cd library/rpi-ws281x
+  - git clone https://github.com/pimoroni/rpi_ws281x-python ~/rpi_ws281x-python/
+  - cd ~/rpi_ws281x-python/
+  - python setup.py build
   - sudo python setup.py install
-  - cd ../..
-  - cd library/UnicornHat
-  - sudo python setup.py install
-  - cd ../..
 install: 
   - cd ~/claudinha-io/claudinha-module
   - "pip install -r requirements.txt"
