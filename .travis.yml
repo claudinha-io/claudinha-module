@@ -12,6 +12,7 @@ addons:
     - build-essential
     - scons
     - swig
+    - python-setuptools
 python:
   - "2.7"
   - "3.4"
@@ -19,9 +20,14 @@ python:
   - "3.6-dev" # 3.6 development branch
   - "nightly" # currently points to 3.7-dev
 before_install:
-  - git clone https://github.com/jgarff/rpi_ws281x.git ~/rpi_ws281x
-  - cd ~/rpi_ws281x
-  - scons
+  - git clone https://github.com/pimoroni/unicorn-hat ~/unicorn-hat/
+  - cd ~/unicorn-hat/
+  - cd library/rpi-ws281x
+  - sudo python setup.py install
+  - cd ../..
+  - cd library/UnicornHat
+  - sudo python setup.py install
+  - cd ../..
 install: 
   - cd ~/claudinha-io/claudinha-module
   - "pip install -r requirements.txt"
