@@ -20,7 +20,7 @@ python:
   - "nightly" # currently points to 3.7-dev
 before_install:
   - git clone https://github.com/jgarff/rpi_ws281x.git ~/rpi_ws281x
-  - cd ~/rpi_ws2 81x
+  - cd ~/rpi_ws281x
   - scons
 install: 
   - cd ~/claudinha-io/claudinha-module
