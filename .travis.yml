@@ -20,8 +20,8 @@ python:
   - "3.6-dev" # 3.6 development branch
   - "nightly" # currently points to 3.7-dev
 before_install:
-  - git clone https://github.com/pimoroni/rpi_ws281x-python ~/rpi_ws281x-python/
-  - cd ~/rpi_ws281x-python/library
+  - git clone https://github.com/pimoroni/rpi_ws281x ~/rpi_ws281x/
+  - cd ~/rpi_ws281x/python
   - python setup.py build
   - sudo python setup.py install
 install: 
