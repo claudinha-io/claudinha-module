@@ -1,5 +1,4 @@
-json_data = '''
- {
+json_data = {
     "rgb": {
         "white": "255, 255, 255",
         "red": "255, 0, 0",
@@ -10,4 +9,3 @@ json_data = '''
         "magenta": "255, 0, 255"
     }
 }
-'''
