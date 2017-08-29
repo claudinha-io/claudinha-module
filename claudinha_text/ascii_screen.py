@@ -10,7 +10,7 @@ width = range(8)
 height = range(8)
 inverted_height = reversed(height)
 
-with open('./claudinha_text/colors.py') as json_data:
+with open('colors.py') as json_data:
     colors = json.load(json_data)
 
 def show_phrase_on_display(phrase, color):
