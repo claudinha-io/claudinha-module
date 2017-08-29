@@ -4,7 +4,7 @@ import sys
 import json
 
 from claudinha_text.ascii_screen import scroll_display
-from claudinha_text.ascii_converter import step, message
+from claudinha_text.ascii_converter import appendLetterToPhrase, splitLettersOfMessage
 
 with open('./claudinha_text/colors.json') as json_data:
     colors = json.load(json_data)
@@ -23,8 +23,8 @@ if __name__ == '__main__':
     validated_text = validate_args(sys.argv)
     with validated_text:
         if len(validated_text) == 1:
-            text = step(message(validated_text))
+            text = appendLetterToPhrase(splitLettersOfMessage(validated_text))
             scroll_display(text)
         if len(validated_text) == 2:
-            text = step(message(validated_text[0]))
+            text = appendLetterToPhrase(splitLettersOfMessage(validated_text[0]))
             scroll_display(text, validated_text[1])

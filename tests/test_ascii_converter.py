@@ -1,4 +1,4 @@
-from claudinha_text.ascii_converter import map_letter, message, step
+from claudinha_text.ascii_converter import map_letter, splitLettersOfMessage, appendLetterToPhrase
 from bitarray import bitarray
 
 
@@ -29,7 +29,7 @@ def test_map_number_5():
 
 
 def test_word_without_number_and_lowcase_in_message():
-    assert message("Palavra") == [
+    assert splitLettersOfMessage("Palavra") == [
         [
             bitarray('00000000'), 
             bitarray('00000000'), 
@@ -114,8 +114,8 @@ def test_word_without_number_and_lowcase_in_message():
 
 
 def test_word_without_number_and_lowcase_and_colon_in_step():
-    word = message("Palavra:")
-    assert step(word) == [
+    word = splitLettersOfMessage("Palavra:")
+    assert appendLetterToPhrase(word) == [
         bitarray('000000000000000000000000000000000000000000000000000000000000000000000000'), 
         bitarray('000000000011110000111100001000000011110000100100001111000011110000000000'), 
         bitarray('000000000010010000100100001000000010010000100100001001000010010000011000'), 
@@ -127,8 +127,8 @@ def test_word_without_number_and_lowcase_and_colon_in_step():
     ]
 
 def test_letter_with_number_and_spaces_in_step():
-    word = message("X 8 B")
-    assert step(word) == [
+    word = splitLettersOfMessage("X 8 B")
+    assert appendLetterToPhrase(word) == [
         bitarray('000000000000000000000000000000000000000000000000'), 
         bitarray('000000000010010000000000001111000000000000111000'), 
         bitarray('000000000010010000000000001001000000000000100100'), 

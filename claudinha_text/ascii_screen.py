@@ -8,7 +8,7 @@ import json, logging
 
 width = range(8)
 height = range(8)
-inverted_height = height.reverse()
+inverted_height = reversed(height)
 
 with open('./claudinha_text/colors.json') as json_data:
     colors = json.load(json_data)
