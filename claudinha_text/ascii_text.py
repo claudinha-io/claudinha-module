@@ -5,7 +5,6 @@ import json
 
 from claudinha_text.ascii_screen import scroll_display
 from claudinha_text.ascii_converter import appendLetterToPhrase, splitLettersOfMessage
-from claudinha_text.colors import json_data
 
 with open('./claudinha_text/colors.json') as json_data:
     colors = json.load(json_data)
