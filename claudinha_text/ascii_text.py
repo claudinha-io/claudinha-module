@@ -20,11 +20,13 @@ def validate_args(user_input):
         return " ".join(user_input[1:])
 
 if __name__ == '__main__':
-    validated_text = validate_args(sys.argv)
-    with validated_text:
-        if len(validated_text) == 1:
-            text = appendLetterToPhrase(splitLettersOfMessage(validated_text))
-            scroll_display(text)
-        if len(validated_text) == 2:
-            text = appendLetterToPhrase(splitLettersOfMessage(validated_text[0]))
-            scroll_display(text, validated_text[1])
+    try:
+        validated_text = validate_args(sys.argv)
+    except AttributeError as e:
+        print("Entrada invalida.", e)
+    if len(validated_text) == 1:
+        text = appendLetterToPhrase(splitLettersOfMessage(validated_text))
+        scroll_display(text)
+    if len(validated_text) == 2:
+        text = appendLetterToPhrase(splitLettersOfMessage(validated_text[0]))
+        scroll_display(text, validated_text[1])

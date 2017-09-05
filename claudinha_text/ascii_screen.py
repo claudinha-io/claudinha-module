@@ -8,7 +8,7 @@ import json, logging
 
 width = range(8)
 height = range(8)
-inverted_height = reversed(height)
+inverted_height = list(reversed(height))
 
 with open('colors.json') as json_data:
     colors = json.load(json_data)
