@@ -28,9 +28,9 @@ def show_phrase_on_display(phrase, color):
     
     rgb = []
     if color in colors["rgb"]:
-        rgb = colors["rgb"][color]
+        rgb = colors["rgb"][color].split(',')
     else:
-        rgb = colors["rgb"]['white']
+        rgb = colors["rgb"]['white'].split(',')
     for w, h in matriz(width, height):
         if phrase[w][h]:
             set_pixel(w, inverted_height[h], int(rgb[0]), int(rgb[1]), int(rgb[2]))
