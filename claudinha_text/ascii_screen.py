@@ -4,13 +4,13 @@
 from claudinha_text.ascii_uh import set_pixel, show_pixels
 from time import sleep
 from itertools import product as matriz
-import json, logging
+import json, logging, os
 
 width = range(8)
 height = range(8)
 inverted_height = list(reversed(height))
 
-with open('colors.json') as json_data:
+with open(os.path.join(os.path.dirname(__file__), 'colors.json')) as json_data:
     colors = json.load(json_data)
 
 def show_phrase_on_display(phrase, color):

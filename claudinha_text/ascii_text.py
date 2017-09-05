@@ -2,11 +2,12 @@
 
 import sys
 import json
+import os
 
 from claudinha_text.ascii_screen import scroll_display
 from claudinha_text.ascii_converter import appendLetterToPhrase, splitLettersOfMessage
 
-with open('colors.json') as json_data:
+with open(os.path.join(os.path.dirname(__file__), 'colors.json')) as json_data:
     colors = json.load(json_data)
 
 def validate_args(user_input):
