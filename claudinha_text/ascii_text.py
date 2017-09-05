@@ -20,11 +20,7 @@ def validate_args(user_input):
     else:
         return [" ".join(user_input[1:])]
 
-def main(args):
-    try:
-        validated_text = validate_args(args)
-    except AttributeError as error:
-        print("Entrada invalida.", error)
+def play(validated_text):
     if len(validated_text) == 1:
         text = appendLetterToPhrase(splitLettersOfMessage(validated_text[0]))
         scroll_display(text)
@@ -33,4 +29,8 @@ def main(args):
         scroll_display(text, validated_text[1])
 
 if __name__ == '__main__':
-    main(sys.argv)
+    try:
+        validated_text = validate_args(sys.argv)
+        play(validated_text)
+    except AttributeError as error:
+        print("Entrada invalida.", error)
