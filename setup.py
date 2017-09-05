@@ -13,5 +13,8 @@ setup(name='claudinha_text',
       author_email='lobinhaxd@gmail.com',
       license='MIT',
       packages=['claudinha_text'],
+      package_data={
+        '': ['*.json']
+      },
       install_requires=reqs,
       zip_safe=False)
