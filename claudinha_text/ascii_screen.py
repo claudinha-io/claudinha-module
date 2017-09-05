@@ -33,7 +33,7 @@ def show_phrase_on_display(phrase, color):
         rgb = colors["rgb"]['white']
     for w, h in matriz(width, height):
         if phrase[w][h]:
-            set_pixel(w, inverted_height[h], rgb[0], rgb[1], rgb[2])
+            set_pixel(w, inverted_height[h], int(rgb[0]), int(rgb[1]), int(rgb[2]))
         else:
             set_pixel(w, inverted_height[h], 0, 0, 0)
     show_pixels()
