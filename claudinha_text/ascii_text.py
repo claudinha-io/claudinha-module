@@ -6,7 +6,7 @@ import json
 from claudinha_text.ascii_screen import scroll_display
 from claudinha_text.ascii_converter import appendLetterToPhrase, splitLettersOfMessage
 
-with open('./claudinha_text/colors.json') as json_data:
+with open('colors.json') as json_data:
     colors = json.load(json_data)
 
 def validate_args(user_input):
